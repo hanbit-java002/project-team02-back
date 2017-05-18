@@ -8,9 +8,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.pension.hp.service.MainService;
 import com.pension.hp.service.PostService;
+import com.pension.hp.service.ReservationService;
 
 @RestController
 public class MainController {
+	
+	@Autowired
+	private ReservationService reservationService;
 	
 	@Autowired
 	private PostService postService;
