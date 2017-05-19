@@ -21,6 +21,9 @@ public class MainController {
 	
 	@Autowired
 	private MainService mainService;
+	
+	@Autowired
+	private SearchService searchService;
 
 	@RequestMapping("/api/sido")
 	public List sidoList(){
