@@ -11,7 +11,9 @@ public class ReservationService {
 	@Autowired
 	private ReservationDAO reservationDAO;
 	
-	public int reserve(String customername){
-		return reservationDAO.reserve(customername);
-	}
+	public int reserve(String customername, String roomid,String num,
+			String date){
+		
+		return reservationDAO.reserve(customername, roomid, num, date);
+		}
 }

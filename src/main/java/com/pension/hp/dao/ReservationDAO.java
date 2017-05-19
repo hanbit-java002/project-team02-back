@@ -13,10 +13,14 @@ public class ReservationDAO {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	public int reserve(String customername){
+	public int reserve(String customername, String roomid,String num,
+			String date){
 		
 		Map param = new HashMap();
 		param.put("customername", customername);
+		param.put("roomid", roomid);
+		param.put("num", num);
+		param.put("date", date);
 		
 		return sqlSession.insert("reserve.insertreserve", param);
 	}

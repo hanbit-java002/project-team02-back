@@ -5,8 +5,8 @@
 <mapper namespace="reserve">
 	<insert id="insertreserve" parameterType="map">
 		INSERT INTO tbl_reservation
-			(reservation_name)
+			(reservation_num, room_id, reservation_name, reservation_date)
 		VALUES
-			(#{customername})
+			(#{num}, #{roomid}, #{customername}, #{date})
 	</insert>
 </mapper>

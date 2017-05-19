@@ -20,9 +20,11 @@ public class ReservationController {
 	
 	@RequestMapping(value="/api/reserve", method=RequestMethod.POST)
 	@ResponseBody
-	public Map reserve(@RequestParam("customername")String customername){
+	public Map reserve(@RequestParam("customername")String customername,
+			@RequestParam("roomid")String roomid, @RequestParam("num")String num,
+			@RequestParam("date")String date){
 		
-		reservationService.reserve(customername);
+		reservationService.reserve(customername, roomid, num, date);
 		
 		Map result= new HashMap();
 		result.put("result", "ok");
