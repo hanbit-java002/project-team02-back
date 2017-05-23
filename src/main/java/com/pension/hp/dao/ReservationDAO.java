@@ -1,6 +1,7 @@
 package com.pension.hp.dao;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
@@ -13,15 +14,23 @@ public class ReservationDAO {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	public int reserve(String customername, String roomid,String num,
-			String date){
+	public int reserve(String roomid, 
+			String reservationname,String reservationnum,
+			String reservationdate){
 		
 		Map param = new HashMap();
-		param.put("customername", customername);
+		param.put("reservationnum", reservationnum);
 		param.put("roomid", roomid);
-		param.put("num", num);
-		param.put("date", date);
+		param.put("reservationname", reservationname);
+		param.put("reservationdate", reservationdate);
 		
 		return sqlSession.insert("reserve.insertreserve", param);
+	}
+	public List reservefind(String reservationname){
+		
+		Map param = new HashMap();
+		param.put("reservationname", reservationname);
+		
+		return sqlSession.selectList("reserve.insertreserve", param);
 	}
 }

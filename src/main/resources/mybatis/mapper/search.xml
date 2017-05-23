@@ -15,7 +15,7 @@
 		where pension_id = #{pensionid};
 	</select>
 	<select id="roominfo" parameterType="map" resultType="map">
-		select room_type, room_type
+		select room_type, room_price, room_id
 		from tbl_room
 		where room_name = #{roomname};
 	</select>

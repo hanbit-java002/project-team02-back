@@ -31,7 +31,7 @@ public class SearchDAO {
 	public List roominfo(String roomname){
 		
 		Map param = new HashMap();
-		param.put("pensionid", roomname);
+		param.put("roomname", roomname);
 		
 		return sqlSession.selectList("search.roominfo", param);
 	}
