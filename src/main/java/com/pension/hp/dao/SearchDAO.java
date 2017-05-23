@@ -1,6 +1,7 @@
 package com.pension.hp.dao;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
@@ -13,11 +14,25 @@ public class SearchDAO {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	public int search(String pensionSearch){
+	public List search(String gugunid){
 		
 		Map param = new HashMap();
-		param.put("pensionSearch", pensionSearch);
+		param.put("gugunid", gugunid);
 		
-		return sqlSession.insert("search.insertreserve", param);
+		return sqlSession.selectList("search.searchresult", param);
+	}
+	public List searchroom(String pensionid){
+		
+		Map param = new HashMap();
+		param.put("pensionid", pensionid);
+		
+		return sqlSession.selectList("search.searchroomresult", param);
+	}
+	public List roominfo(String roomname){
+		
+		Map param = new HashMap();
+		param.put("pensionid", roomname);
+		
+		return sqlSession.selectList("search.roominfo", param);
 	}
 }

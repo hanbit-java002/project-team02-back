@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.pension.hp.service.MainService;
 import com.pension.hp.service.PostService;
 import com.pension.hp.service.ReservationService;
+import com.pension.hp.service.SearchService;
 
 @RestController
 public class MainController {
