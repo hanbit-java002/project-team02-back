@@ -35,4 +35,18 @@ public class SearchDAO {
 		
 		return sqlSession.selectList("search.roominfo", param);
 	}
+	public List findroomid(String roomid){
+		
+		Map param = new HashMap();
+		param.put("roomid", roomid);
+		
+		return sqlSession.selectList("search.findroomid", param);
+	}
+	public List findpension(String pensionid){
+		
+		Map param = new HashMap();
+		param.put("pensionid", pensionid);
+		
+		return sqlSession.selectList("search.findpension", param);
+	}
 }

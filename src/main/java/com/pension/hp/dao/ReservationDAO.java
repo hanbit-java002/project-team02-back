@@ -14,8 +14,8 @@ public class ReservationDAO {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	public int reserve(String roomid, 
-			String reservationname,String reservationnum,
+	public int reserve(String reservationnum, String roomid, 
+			String reservationname,
 			String reservationdate){
 		
 		Map param = new HashMap();
@@ -23,7 +23,7 @@ public class ReservationDAO {
 		param.put("roomid", roomid);
 		param.put("reservationname", reservationname);
 		param.put("reservationdate", reservationdate);
-		
+				
 		return sqlSession.insert("reserve.insertreserve", param);
 	}
 	public List reservefind(String reservationname){
@@ -31,6 +31,6 @@ public class ReservationDAO {
 		Map param = new HashMap();
 		param.put("reservationname", reservationname);
 		
-		return sqlSession.selectList("reserve.insertreserve", param);
+		return sqlSession.selectList("reserve.reservefind", param);
 	}
 }

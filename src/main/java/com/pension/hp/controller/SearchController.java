@@ -52,4 +52,27 @@ public class SearchController {
 		
 		return result;
 	}
+	@RequestMapping(value="/api/findroomid", method=RequestMethod.POST)
+	@ResponseBody
+	public Map findroomid(@RequestParam("roomid")String roomid){
+		
+		List roomidfind = searchService.findroomid(roomid);
+		
+		Map result= new HashMap();
+		result.put("list", roomidfind);
+		
+		return result;
+	}
+	@RequestMapping(value="/api/findpension", method=RequestMethod.POST)
+	@ResponseBody
+	public Map findpension(@RequestParam("pensionid")String pensionid){
+		
+		List pensionidlist = searchService.findpension(pensionid);
+		
+		Map result= new HashMap();
+		result.put("list", pensionidlist);
+		
+		return result;
+	}
+	
 }

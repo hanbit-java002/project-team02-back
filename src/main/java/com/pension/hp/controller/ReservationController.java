@@ -1,6 +1,7 @@
 package com.pension.hp.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,10 +38,10 @@ public class ReservationController {
 	@ResponseBody
 	public Map reserve(@RequestParam("reservationname")String reservationname){
 		
-		reservationService.reservefind(reservationname);
+		List list = reservationService.reservefind(reservationname);
 		
 		Map result= new HashMap();
-		result.put("result", "ok");
+		result.put("list", list);
 		
 		return result;
 	}

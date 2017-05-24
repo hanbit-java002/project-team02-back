@@ -23,4 +23,10 @@ public class SearchService {
 	public List roominfo(String roomname){
 		return searchDAO.roominfo(roomname);
 	}
+	public List findroomid(String roomid){
+		return searchDAO.findroomid(roomid);
+	}
+	public List findpension(String pensionid){
+		return searchDAO.findpension(pensionid);
+	}
 }

@@ -19,4 +19,14 @@
 		from tbl_room
 		where room_name = #{roomname};
 	</select>
+	<select id="findroomid" parameterType="map" resultType="map">
+		select room_type, room_price, room_id, pension_id, room_name
+		from tbl_room
+		where room_id = #{roomid};
+	</select>
+	<select id="findpension" parameterType="map" resultType="map">
+		select pension_id, pension_name, pension_addr, pension_tel
+		from tbl_pension
+		where pension_id = #{pensionid};
+	</select>
 </mapper>
